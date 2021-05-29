@@ -1,0 +1,26 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 3;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000024942235f70 .scope module, "nand_gate" "nand_gate" 2 1;
+ .timescale -3 -3;
+    .port_info 0 /INPUT 2 "A";
+    .port_info 1 /OUTPUT 1 "B";
+L_00000249422031e0 .functor NAND 1, L_00000249422361a0, L_0000024942236240, C4<1>, C4<1>;
+o0000024942236fd8 .functor BUFZ 2, C4<zz>; HiZ drive
+v0000024942203560_0 .net "A", 1 0, o0000024942236fd8;  0 drivers
+v0000024942203780_0 .net "B", 0 0, L_00000249422031e0;  1 drivers
+v0000024942203140_0 .net *"_ivl_2", 0 0, L_00000249422361a0;  1 drivers
+v0000024942236100_0 .net *"_ivl_4", 0 0, L_0000024942236240;  1 drivers
+L_00000249422361a0 .part o0000024942236fd8, 1, 1;
+L_0000024942236240 .part o0000024942236fd8, 0, 1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "./nand_gate.v";

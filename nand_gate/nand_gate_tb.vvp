@@ -1,0 +1,49 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 3;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001cba82e5e60 .scope module, "nand_gate_tb" "nand_gate_tb" 2 4;
+ .timescale -3 -3;
+v000001cba82e6180_0 .var "A", 1 0;
+v000001cba82e6220_0 .net "B", 0 0, L_000001cba82e62c0;  1 drivers
+S_000001cba82e5ff0 .scope module, "uut" "nand_gate" 2 8, 3 1 0, S_000001cba82e5e60;
+ .timescale -3 -3;
+    .port_info 0 /INPUT 2 "A";
+    .port_info 1 /OUTPUT 1 "B";
+L_000001cba82e62c0 .functor NAND 1, L_000001cba829ba60, L_000001cba829bb00, C4<1>, C4<1>;
+v000001cba82b3560_0 .net "A", 1 0, v000001cba82e6180_0;  1 drivers
+v000001cba82b3780_0 .net "B", 0 0, L_000001cba82e62c0;  alias, 1 drivers
+v000001cba82b3140_0 .net *"_ivl_2", 0 0, L_000001cba829ba60;  1 drivers
+v000001cba8297f10_0 .net *"_ivl_4", 0 0, L_000001cba829bb00;  1 drivers
+L_000001cba829ba60 .part v000001cba82e6180_0, 1, 1;
+L_000001cba829bb00 .part v000001cba82e6180_0, 0, 1;
+    .scope S_000001cba82e5e60;
+T_0 ;
+    %vpi_call 2 11 "$dumpfile", "nand_gate_tb.vcd" {0 0 0};
+    %vpi_call 2 12 "$dumpvars", 32'sb00000000000000000000000000000000, S_000001cba82e5e60 {0 0 0};
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v000001cba82e6180_0, 0, 2;
+    %delay 20, 0;
+    %pushi/vec4 1, 0, 2;
+    %store/vec4 v000001cba82e6180_0, 0, 2;
+    %delay 20, 0;
+    %pushi/vec4 2, 0, 2;
+    %store/vec4 v000001cba82e6180_0, 0, 2;
+    %delay 20, 0;
+    %pushi/vec4 3, 0, 2;
+    %store/vec4 v000001cba82e6180_0, 0, 2;
+    %delay 20, 0;
+    %vpi_call 2 26 "$display", "Test Complete!" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "nand_gate_tb.v";
+    "./nand_gate.v";
